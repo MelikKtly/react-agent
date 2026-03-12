@@ -24,3 +24,15 @@ def run_test_agent(state: AgentState)->AgentState:
         "validation":validation
     }
 
+
+def build_graph()->StateGraph[AgentState]:
+    graph=StateGraph[AgentState]
+
+    graph.add_node("main_agent", run_main_agent)
+    graph.add_node("test_agent", run_test_agent)
+    
+    graph.add_edge(START, "main_agent")
+    graph.add_edge("main_agent", "test_agent")
+    graph.add_edge("test_agent", END)
+    
+    return graph
