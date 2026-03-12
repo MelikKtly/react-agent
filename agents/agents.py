@@ -1,10 +1,11 @@
 from langchain_ollama import ChatOllama
 from langchain.prompts import PromptTemplate
 
-llm =ChatOllama(
-    model="qwen3:1.7b"
-    temperature=0.9
+llm=ChatOllama(
+    model="qwen3:1.7b", 
+    temperature=0
 )
+
 
 main_prompt=PromptTemplate.from_template(
     """
