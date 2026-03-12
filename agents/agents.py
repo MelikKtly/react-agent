@@ -6,4 +6,19 @@ llm =ChatOllama(
     temperature=0.9
 )
 
+main_prompt=PromptTemplate.from_template(
+    """
+You are a language decetion agent.
+
+Your job is to detect which language each word belongs to.
+
+Sentence:{text}
+
+Return format:
+word -> language
+
+"""
+)
+
+
 
