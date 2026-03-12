@@ -15,3 +15,12 @@ def run_main_agent(state: AgentState)->AgentState:
     }
 
 
+def run_test_agent(state: AgentState)->AgentState:
+    validation=test_agent(
+        state["text"],
+        state["result"]
+    )
+    return{
+        "validation":validation
+    }
+
