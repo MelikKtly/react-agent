@@ -26,7 +26,7 @@ def run_test_agent(state: AgentState)->AgentState:
 
 
 def build_graph()->StateGraph[AgentState]:
-    graph=StateGraph[AgentState]
+    graph=StateGraph(AgentState)
 
     graph.add_node("main_agent", run_main_agent)
     graph.add_node("test_agent", run_test_agent)
@@ -35,4 +35,4 @@ def build_graph()->StateGraph[AgentState]:
     graph.add_edge("main_agent", "test_agent")
     graph.add_edge("test_agent", END)
     
-    return graph
+    return graph.compile()
